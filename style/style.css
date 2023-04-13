@@ -325,6 +325,41 @@ nav li a:hover{
   background-color: var(--third-color);
 }
 
+.bottom__about{
+  width: 100%;
+  height: 30%;
+  display: flex;
+  flex-direction: row;
+  justify-content:space-around;
+}
+.bottom__about .icone__colonne{
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  justify-content: center;
+}
+
+.icone__colonne p{
+  width: 250px;
+  padding-top: 30px;
+  color: var(--main-color);
+  font-size: 12pt;
+}
+
+.bottom__about .icone{
+  width: 180px;
+  height: 180px;
+  background-color: var(--third-color);
+  border-radius: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icone i{
+  font-size: 80px;
+}
+
 
 /* ----------  END About CSS ---------- */
 
@@ -478,8 +513,13 @@ footer{
   transition: all 0.3s;
 }
 
-.social__media li:last-child:hover{
+.social__media li:nth-child(2):hover{
   background-color: #0B65C2;
+  transition: all 0.3s;
+}
+
+.social__media li:nth-child(3):hover{
+  background-color: #1C9BEF;
   transition: all 0.3s;
 }
 
@@ -505,5 +545,3 @@ footer{
 .text__footer p:last-child{
   color: #AD225C;
 }
-
-
