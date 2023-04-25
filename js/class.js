@@ -5,7 +5,7 @@ const contact = document.querySelector("#contact");
 
 // Sélectionner les éléments HTML à modifier pour animation
 const workAnimation = document.querySelector("#work__Article");
-
+const gridAnimation = document.querySelectorAll(".test");
 // Ajouter un événement de défilement à la fenêtre
 window.addEventListener("scroll", () => {
   // Vérifier la hauteur de la page au scroll et modifier les classes des éléments en conséquence
@@ -17,6 +17,9 @@ window.addEventListener("scroll", () => {
   } else if (scrollTop <= 2000) {
     work.classList.add("active");
     workAnimation.classList.add("animation");
+    gridAnimation.forEach(element => {
+      element.classList.add('animation');
+    });
     about.classList.remove("active");
     contact.classList.remove("active");
   } else {
