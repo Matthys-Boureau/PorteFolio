@@ -494,8 +494,8 @@ nav li a:hover{
 .container {  
   position: relative;
   display: grid;
-  grid-template-columns: repeat(3, 250px);
-  grid-template-rows: repeat(3, 250px);
+  grid-template-columns: repeat(3, 210px);
+  grid-template-rows: repeat(3, 210px);
   grid-gap: 10px;
   margin: 100px;
   justify-content: center;
@@ -705,14 +705,14 @@ footer{
   transition: all 0.3s;
   opacity: 0;
   animation: apparitionLogo;
-  animation-duration: 1s;
+  animation-duration: 0.3s;
   animation-fill-mode: both;
 }
 
 .social__media a:last-child li .fa-download{
   transition: all 0.3s;
   animation: disparitionLogo;
-  animation-duration: 1s;
+  animation-duration: 0.3s;
   opacity: 1;
   animation-fill-mode: both;
 }
@@ -720,7 +720,7 @@ footer{
 .social__media a:last-child li:hover .fa-c, .social__media a:last-child li:hover .fa-v{
   transition: all 0.3s;
   animation: disparitionLogo;
-  animation-duration: 1s;
+  animation-duration: 0.3s;
   opacity: 1;
   animation-fill-mode: both;
 }
@@ -729,7 +729,7 @@ footer{
   transition: all 0.3s;
   opacity: 0;
   animation: apparitionLogo;
-  animation-duration: 1s;
+  animation-duration: 0.3s;
   animation-fill-mode: both;
 }
 
@@ -752,11 +752,9 @@ footer{
 @keyframes apparitionLogo {
   from{
     opacity: -2;
-    transform: translateY(-50px);
   }
   to{
     opacity: 1;
-    transform: translateY(0px);
     display: inherit;
 
   }
@@ -765,11 +763,9 @@ footer{
 @keyframes disparitionLogo {
   from{
     opacity: 1;
-    transform: translateY(0px);
   }
   to{
     opacity: -2;
-    transform: translateY(50px);
     visibility: hidden;
   }
 }
