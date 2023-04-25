@@ -25,11 +25,11 @@ window.addEventListener("scroll", () => {
     about.classList.remove("active");
     work.classList.remove("active");
   }
-if (scrollTop >= 500) {
-    workAnimation.classList.add("animation");
-    gridAnimation.forEach(element => {
-      element.classList.add('animation');
-    });
-}
+  if (scrollTop >= 500) {
+      workAnimation.classList.add("animation");
+      gridAnimation.forEach(element => {
+        element.classList.add('animation');
+      });
+  }
 
 });

@@ -492,6 +492,7 @@ nav li a:hover{
 }
 
 .container {  
+  position: relative;
   display: grid;
   grid-template-columns: repeat(3, 250px);
   grid-template-rows: repeat(3, 250px);
@@ -563,7 +564,7 @@ nav li a:hover{
 
 #contact__Article{
   width: 100vw;
-  height: calc(90vh - 100px);
+  height: calc(98vh - 100px);
   background-color: var(--main-color);
 }
 
@@ -664,7 +665,13 @@ footer{
 }
 
 .social__media li{
-  padding: 15px;
+  padding: 10px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
   background-color: #262F38;
   border-radius: 8px;
   transition: all 0.3s;
@@ -692,7 +699,79 @@ footer{
 
 .social__media a:last-child li:hover{
   background-color: rgb(211, 19, 19);
+}
+
+.social__media a:last-child li:hover .fa-download{
   transition: all 0.3s;
+  opacity: 0;
+  animation: apparitionLogo;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+.social__media a:last-child li .fa-download{
+  transition: all 0.3s;
+  animation: disparitionLogo;
+  animation-duration: 1s;
+  opacity: 1;
+  animation-fill-mode: both;
+}
+
+.social__media a:last-child li:hover .fa-c, .social__media a:last-child li:hover .fa-v{
+  transition: all 0.3s;
+  animation: disparitionLogo;
+  animation-duration: 1s;
+  opacity: 1;
+  animation-fill-mode: both;
+}
+
+.social__media a:last-child li .fa-c, .social__media a:last-child li .fa-v{
+  transition: all 0.3s;
+  opacity: 0;
+  animation: apparitionLogo;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+.fa-download{
+  position: absolute;
+  top:28;
+  left: 28%;
+}
+.fa-c{
+  position: absolute;
+  top: 28;
+  left: 15%;
+}
+.fa-v{
+  position: absolute;
+  top: 28;
+  left: 50%;
+}
+
+@keyframes apparitionLogo {
+  from{
+    opacity: -2;
+    transform: translateY(-50px);
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0px);
+    display: inherit;
+
+  }
+}
+
+@keyframes disparitionLogo {
+  from{
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  to{
+    opacity: -2;
+    transform: translateY(50px);
+    visibility: hidden;
+  }
 }
 
 .text__footer{
