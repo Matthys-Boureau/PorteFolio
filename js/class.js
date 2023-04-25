@@ -14,18 +14,22 @@ window.addEventListener("scroll", () => {
     about.classList.add("active");
     work.classList.remove("active");
     contact.classList.remove("active");
+
   } else if (scrollTop <= 2000) {
     work.classList.add("active");
+    about.classList.remove("active");
+    contact.classList.remove("active");
+
+  }else {
+    contact.classList.add("active");
+    about.classList.remove("active");
+    work.classList.remove("active");
+  }
+if (scrollTop >= 500) {
     workAnimation.classList.add("animation");
     gridAnimation.forEach(element => {
       element.classList.add('animation');
     });
-    about.classList.remove("active");
-    contact.classList.remove("active");
-  } else {
-    contact.classList.add("active");
-    about.classList.remove("active");
-    work.classList.remove("active");
-    
-  }
+}
+
 });

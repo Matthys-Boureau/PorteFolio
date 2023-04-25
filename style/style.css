@@ -257,7 +257,7 @@ nav li a:hover{
 }
 
 .content__about .left{
-  width: 40%;
+  width: 30%;
   height: 100%;
   display: flex;
   flex-direction: column; 
@@ -282,7 +282,7 @@ nav li a:hover{
 }
 
 .content__about .right{
-  width: 40%;
+  width: 50%;
   height: 100%;
   display: flex;
   flex-direction: column; 
