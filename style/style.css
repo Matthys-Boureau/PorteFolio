@@ -885,17 +885,14 @@ footer{
   color: var(--red);
 }
 
-@media screen and (max-width : 1000px ) {
-  .contact__Article{
-    height: auto;
-  }
-}
-
 @media screen and (max-width : 600px) {
   input[type=text], input[type= mail], textarea {
     width: 300px;
   }
   .social__media{
     gap: 20px;
+  }
+  form{
+    height: 400px;
   }
 }

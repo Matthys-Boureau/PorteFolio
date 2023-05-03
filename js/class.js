@@ -23,6 +23,11 @@ window.addEventListener("scroll", () => {
       aboutSize = 1700; 
       workSize = 2700;
     }
+
+    if (window.screen.width < 620){
+      aboutSize = 2400; 
+      workSize = 3200;
+    }
   
   if (scrollTop < aboutSize) {
     about.classList.add("active");
