@@ -617,7 +617,7 @@ nav li a:hover{
 .container .test{
   opacity: 0;
   border: 2px solid var(--bleuCanard);
-  width: 250px;
+  width: 300px;
   height: 100%;
   position: relative;
   transition: 0.4s;
