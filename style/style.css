@@ -567,27 +567,38 @@ nav li a:hover{
   background-color: var(--main-color);
 }
 
-.container {  
+.slider{
+  width: 100%;
   position: relative;
-  display: grid;
-  grid-template-columns: repeat(3, 210px);
-  grid-template-rows: repeat(3, 210px);
-  grid-gap: 15px;
-  margin: 100px;
+  overflow: hidden;
+  height: 314px;
+  display: flex;
+  align-items: center;
   justify-content: center;
 }
 
-.container .test{
-  opacity: 0;
-  width: 100%;
-  height: 100%;
-  border: 2px solid var(--bleuCanard);
-  background-color: var(--third-color);
+.container {  
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  height: 210px;
+  gap: 15px;
+  margin-top: 100px;
+  margin-bottom: 15px ;
+  transform: translateY(314px);
+  transition: 0.4s;
+}
+
+.container.visible{
+  transform: translateY(0px);
 }
 
 .container .test.animation{
   animation: gridWork;
-  animation-duration: 0.3s;
+  animation-duration: 0.2s;
   animation-fill-mode: both;
   animation-iteration-count: 1;
 }
@@ -603,38 +614,112 @@ nav li a:hover{
   }
 }
 
-.container .test:nth-child(1){
-  animation-delay: 0.2s;
-  border-radius: 10px 0 0 0 ;
+.container .test{
+  opacity: 0;
+  border: 2px solid var(--bleuCanard);
+  width: 250px;
+  height: 100%;
+  position: relative;
+  transition: 0.4s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  overflow: hidden;
 }
+
+.container .test:nth-child(1){
+  border-radius: 10px 0 0 10px ;
+  animation-delay: 0.2s;
+}
+
 .container .test:nth-child(2){
   animation-delay: 0.3s;
 }
+
 .container .test:nth-child(3){
   animation-delay: 0.4s;
-  border-radius: 0 10px 0 0 ;
+  border-radius: 0 10px 10px 0 ;
+}
 
+.container .test .background{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: contain;
+  background-position: center;
+  transition: all 0.4s;
 }
-.container .test:nth-child(4){
-  animation-delay: 0.5s;
+
+.container .test .background{
+  background-image: url(../img/pointInterrogation.png);
 }
-.container .test:nth-child(5){
-  animation-delay: 0.6s;
+
+.container .morpion .background{
+  background-image: url(../img/morpion.png);
 }
-.container .test:nth-child(6){
-  animation-delay: 0.7s;
+
+.container .test .text{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  transform: translateY(0px);
+  transition: all 0.4s;
+  z-index: 1;
 }
-.container .test:nth-child(7){
-  animation-delay: 0.8s;
-  border-radius: 0 0 0 10px;
+
+.container .test .text p{
+  font-size: 2rem;
+  color: var(--bleuCanard);
 }
-.container .test:nth-child(8){
-  animation-delay: 0.9s;
+
+.container .test:hover .text{
+  background-color: white;
+  transform: translateY(-210px);
 }
-.container .test:nth-child(9){
-  animation-delay: 1s;
-  border-radius: 0 0 10px 0;
+
+.container .test .text span{
+  width: 40px;
+  height: 3px;
+  background-color: var(--bleuCanard);
 }
+
+.pointList{
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  gap: 10px;
+  width: 100%;
+  height: 30px;
+}
+
+.pointList .point{
+  width: 10px;
+  height: 10px;
+  border-radius: 100vmax;
+  background-color: var(--bleuCanard);
+  transition: 0.4s;
+}
+
+.point.visible{
+  transform: scale(1.5);
+  transition: 0.6s;
+}
+
+.space{
+  display: block;
+  width: 100%;
+  height: 100px;
+}
+
 
 @media screen and (max-width : 1000px ) {
   .work__Article{
@@ -716,8 +801,13 @@ input[type=text], input[type= mail], textarea{
   border: none;
   width: 500px;
   height: 30px;
-  padding: 10px 15px;
-  font-size: 12pt;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  border-radius: 100vmax ;
+}
+
+textarea{
+  border-radius: 5px;
 }
 
 input[type=submit]{

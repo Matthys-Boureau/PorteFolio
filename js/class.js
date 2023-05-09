@@ -53,3 +53,47 @@ window.addEventListener("scroll", () => {
   }
   
 })
+
+let container = document.querySelectorAll('.container');
+let point = document.querySelectorAll('.point');
+
+let count = 0;
+let intervalId = setInterval(() => {
+    for(let i = 0; i < container.length; i++) {
+        container[i].classList.remove('visible');
+        point[i].classList.remove('visible');
+    }
+
+    if(count < container.length - 1) {
+        count++;
+    } else {
+        count = 0;
+    }
+
+    container[count].classList.add('visible');
+    point[count].classList.add('visible');
+}, 4000);
+
+for(let i = 0; i < container.length; i++) {
+  container[i].addEventListener('mouseenter', () => {
+      clearInterval(intervalId);
+  });
+
+  container[i].addEventListener('mouseleave', () => {
+      intervalId = setInterval(() => {
+          for(let j = 0; j < container.length; j++) {
+              container[j].classList.remove('visible');
+              point[j].classList.remove('visible');
+          }
+
+          if(count < container.length - 1) {
+              count++;
+          } else {
+              count = 0;
+          }
+
+          container[count].classList.add('visible');
+          point[count].classList.add('visible');
+      }, 4000);
+  });
+}
